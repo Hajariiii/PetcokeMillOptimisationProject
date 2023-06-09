@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+      <title>About</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles/startpage.css">
+  </head>
+
+  <body>
+    <div class="first-icon"></div>
+    <h4>About the solution</h4>
+
+    <p>
+      With this interface, you can create precise predictions for the Petcoke Mill's outputs. 
+      We created a robust XGBoost MultiRegression model takes into consideration the most important variables impacting the mill's performance. 
+    </p>
+
+    <p>
+      Furthermore, this interface includes an optimization feature allowing to improve the Petcoke Mill's performance and efficiency. 
+      We can fine-tune the mill's characteristics and operating settings to get optimal outcomes by using Particle Swarm Optimization (PSO). 
+      The goal of this optimization procedure is to improve the mill's overall productivity, energy efficiency, and cost-effectiveness.
+    </p>
+    <p>
+      This interface enables you to exploit the information produced from the Petcoke Mill dataset between 2021 and 2023 by using the power of data-driven decision-making. 
+      Make educated decisions, increase operational efficiency, and unearth useful insights that boost productivity and performance gains. 
+      This platform is built to meet your data analysis needs, enabling you to explore, analyze, and extract useful information from mill data to improve your decision-making process.
+    </p>
+    <p>
+      This interface aims to empower operators, engineers, and researchers by merging expertise and technology to improve the efficiency and production of the Petcoke Mill.
+      We use human expertise, data power, and powerful algorithms to drive continuous improvement and produce optimal results.
+
+    </p>
+
+
+    <h4><div class="notfirst-icon"></div>About the dataset</h4>
+
+    <p>
+      
+        The target variables are:
+        <ul>
+          <li>Mill Power: Represents the power of the mill motor in kilowatts (KW).</li>
+          <li>Draw Speed: Refers to the speed at which the fan clears the ground petroleum coke in revolutions per minute (rpm).</li>
+        </ul>
+      
+      
+        The input variables for the model are as follows:
+        <ul>
+          <li>Parameters related to hot gases:
+            <ul>
+              <li>Input Temperature: Pertains to the temperature of the hot gases at the inlet in degrees Celsius (°C).</li>
+              <li>Exhaust air Flow Rate: Represents the flow rate of the hot gases at the inlet in cubic meters per second (m³/s).</li>
+            </ul>
+          </li>
+          <li>Parameters related to petcoke:
+            <ul>
+              <li>Coal Mill Flow Rate: Represents the input flow rate of petcoke into the mill in cubic meters per second (m³/s).</li>
+              <li>Mill Differential Pressure (ΔP): Refers to the pressure difference between the inlet pressure of the hot gases and the outlet pressure of the mixture (hot gases + ground petcoke). This variable implicitly reflects the petroleum coke content in megapascals (MPa).</li>
+            </ul>
+          </li>
+          <li>Parameters related to the process:
+            <ul>
+              <li>Transport Chain Speed : Represents the speed of the scraper after separation from the hot gases in revolutions per minute (rpm).</li>
+            </ul>
+          </li>
+        </ul>
+      
+      </p>
+    
+    
+  </body>
+</html> 
+{% endblock %}

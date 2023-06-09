@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Process Optimization</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap5.css">
+    <link rel="stylesheet" href="styles/startpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+    <style>
+        body {
+          font-family: "Verdana", sans-serif;
+        }
+    
+        .topnav {
+          background-color:  #0c0c0c;
+          overflow: hidden;
+          height: 70px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          
+        }
+
+        .topnav form {
+          margin: 0;
+          padding: 0;
+          margin-right: 10px;
+        }
+    
+
+
+        .topnav button {
+        padding: 6px 8px;
+        text-decoration: none;
+        font-size: 18px;
+        color: rgb(223, 253, 243);
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: transparent;
+        border: none;
+        justify-content: middle;
+        cursor: pointer;
+        border-radius: 3px;
+        }
+
+        
+        .topnav button:hover {
+            color: #000000;
+            background-color: aliceblue;
+            /*background-color: #90bec9;*/
+        }
+    
+        .container {
+            margin-top: 40px;
+            font-size: 20px;
+            padding: 0px 10px;
+        }
+    
+        @media screen and (max-height: 450px) {
+            .topnav { padding-top: 15px; }
+            .topnav a { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+      <div class="sidebar-icon"></div>
+      <form action="/" method="post">
+          <button type="submit" name="submit" value="Home"><i class="fas fa-home"></i> Home</button>
+      </form>
+      <form action="/" method="post">
+        <button type="submit" name="submit" value="About"><i class="fas fa-info-circle"></i> About</button>
+      </form>
+      <form action="/" method="post">
+        <button type="submit" name="submit" value="Prediction"><i class="fas fa-chart-line"></i> Prediction</button>
+      </form>
+      <form action="/" method="post">
+        <button type="submit" name="submit" value="optimisation"><i class="fas fa-cogs"></i> Optimization</button>
+      </form>
+      <form action="/" method="post">
+        <button type="submit" name="submit" value="data visualization"><i class="fas fa-chart-bar"></i> Data Analysis</button>
+      </form>
+    </div>
+
+    <div class="container">
+        <p>
+        {% block content %}
+        {% endblock %}
+        </p>
+    </div>
+
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap5.js"></script>    
+</body>
+</html>

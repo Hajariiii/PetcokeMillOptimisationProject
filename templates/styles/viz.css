@@ -1,0 +1,21 @@
+body {
+
+    cursor :auto;
+  }
+
+h4 { font-size: 35px; 
+
+    letter-spacing: -1px; color:rgb(54, 163, 203); 
+    text-shadow: 1px 1px 0 rgb(161, 201, 214);
+    margin: 10px 0 24px; text-align: center;
+    font-family: 'Verdana Full Stack';
+    font-style: oblique 20deg;
+    font-weight: bold;
+  
+  }
+
+#graph1, #graph2 {
+    width: 100%;
+    margin-left: auto;
+    margin-bottom: 40px;
+}

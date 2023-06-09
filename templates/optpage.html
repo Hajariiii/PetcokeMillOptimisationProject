@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function toggleCard(cardId, contentId) {
+      var card = document.getElementById(cardId);
+      var content = document.getElementById(contentId);
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+      } else {
+        content.style.display = 'none';
+      }
+    }
+  </script>
+</head>
+<body>
+  <h4><div class="opt-icon"></div>Optimisation</h4>
+  <p>You may set your desired targets for the Mill Power and Main Drive Speed parameters in the optimization section. The optimal process parameters required to attain those aims are then calculated by powerful algorithms. 
+    This allows you to boost the efficiency and efficacy of your Petcoke processing.</p>
+  <p>Please define the targets:</p>
+  
+  <div class="container">
+    <form action="/enter-target" method="post">
+      <div class="cardscontainer">
+        <div class="card">
+          <h6 onclick="toggleCard('millpower', 'millpowerContent')"> Mill Power </h6>
+          <div id="millpowerContent" style="display: none;">
+            <p>
+              <label for="millpower"> Recommended mill power values are between 120 and 130</label>
+            </p>
+            <div class="input-group mb-3">
+              <input id="millpowerInput" class="form-control" type="number" name="millpowertarget" value="0" aria-label="millpower" aria-describedby="power-addon">
+              <div class="input-group-append">
+                <span class="input-group-text" id="power-addon">KW</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h6 onclick="toggleCard('drivespeed', 'drivespeedContent')"> Main Drive Speed</h6>
+          <div id="drivespeedContent" style="display: none;">
+            <p>
+              <label for="drivespeed">Recommended main drive speed values are between 1150 and 1250</label>
+            </p>
+            <div class="input-group mb-3">
+              <input id="drivespeedInput" class="form-control" type="number" name="drivespeedtarget" value="0" aria-label="drivespeed" aria-describedby="mainspeed-addon">
+              <div class="input-group-append">
+                <span class="input-group-text" id="drivespeed-addon">Rpm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button class="normalbutton" type="submit">Optimise</button>
+      </div>
+
+      <div class="footer">
+        <img src="styles/process_img01.png" alt="Your Picture">
+      </div>
+    
+      <div class="cardscontainer">
+        <div class="card">
+          <h6 onclick="toggleCard('hotgaz', 'hotgazContent')">Input temperature </h6>
+          <div id="hotgazContent" style="display: none;">
+            <p>
+              <label for="Inputtemperature"> Recommended input temperature values are between 170 and 210 </label>
+            </p>
+            <div class="input-group mb-3">
+              <input id="Inputtemperature" class="form-control" type="number" name="Inputtemperature" value="0" aria-label="Input temperature" aria-describedby="temperature-addon" disabled>
+              <div class="input-group-append">
+                <span class="input-group-text" id="temperature-addon">°C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h6 onclick="toggleCard('air', 'airContent')"> Exhaust air flow rate </h6>
+          <div id="airContent" style="display: none;">
+            <p>
+              <label for="Exhaustairflowrate">Recommended air flow rate values are between 32000 and 36000</label>
+            </p>
+            <input id="Exhaustairflowrate" class="form-control" type="number" name="Exhaustairflowrate" value="0" disabled>
+            <div class="input-group-append">
+              <span class="input-group-text" id="rate-addon">m³/s</span>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h6 onclick="toggleCard('system', 'systemContent')"> Transport chain speed </h6>
+          <div id="systemContent" style="display: none;">
+            <p>
+              <label for="Transportchainspeed"> Recommended Transport chain speed values are between 410 and 550 </label>
+            </p>
+            <div class="input-group mb-3">
+              <input id="Transportchainspeed" class="form-control" type="number" name="Transportchainspeed" value="0" aria-label="Transport chain speed" aria-describedby="speed-addon" disabled>
+              <div class="input-group-append">
+                <span class="input-group-text" id="speed-addon">Rpm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
+
+{% endblock %}

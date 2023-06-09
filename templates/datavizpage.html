@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Visualization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/startpage.css">
+
+  </head>
+  <body>
+    <h4><div class="data-icon"></div>Data Analysis</h4> 
+    <p>    In this section, you can display figures to gather information about the settings of the Petcoke Mill Process.
+    </p>
+    <card class ="visualise">
+      <div>
+        <label for="dropdown">Select a figure:</label>
+        <select id="dropdown">
+
+          <option value="correlations">Data Correlations</option>
+          <option value="millpower">Mill Power Visualization</option>
+          <option value="drivespeed">Main Drive Speed Visualization</option>
+          <option value="temperature">Input Temperature Visualization</option>
+          <option value="dpMill">DP Mill Visualization</option>
+          <option value="millfeedrate">Coal Mill Feed Rate Visualization</option>
+          <option value="air">Exhaust Air Rate Visualization</option>
+          <option value="speed">Transport Chain Speed Visualization</option>
+        </select>
+        <button onclick="displayFigure()">Display Figure</button>
+      </div>
+      <div id="figure-container"></div>
+      
+  </div>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script>
+    function displayFigure() {
+      var selectedOption = document.getElementById('dropdown').value;
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState === 4 && this.status === 200) {
+          var graphJSON = JSON.parse(this.responseText);
+          Plotly.newPlot('figure-container', graphJSON.data, graphJSON.layout);
+        }
+      };
+      xhttp.open('POST', '/display-figure', true);
+      xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+      xhttp.send('figure=' + selectedOption);
+    }
+  </script>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Prediction & Optimization</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles/startpage.css">
+  </head>
+  
+  <body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <h4>Prediction</h4>
+    <p> Get the outputs to your inputs</p>
+    <form action="/enter-inputs" method="Post">
+      <p> Please define your inputs : </p>
+      <p>
+        <label for="Inputtemperature">Input temperature:</label>
+        <input id="Inputtemperature" type="number" name="Inputtemperature" value="0" />
+      </p>
+      <p>
+        <label for="Exhaustairflowrate">Exhaust air flow rate:</label>
+        <input id="Exhaustairflowrate" type="number" name="Exhaustairflowrate" value="0" />
+      </p>
+      <pre>
+        <label for="Raclettechainspeed">Raclette chain speed:</label>
+        <input id="Raclettechainspeed" type="number" name="Raclettechainspeed" value="0" />
+      </pre>
+        <pre> 
+          <button class = "normalbutton" type="submit" value="Submit">Predict</button>
+        </pre>
+    </form> 
+    
+    <h4>Optimization</h4>
+    <p> Get the optimized inputs to achieve your goal</p>
+    <form action="/enter-target" method="post">
+        <p> Please define your target : </p>
+      <pre>
+        <label for="millpowertarget">Your Mill Power target:</label>
+        <input id="millpowertarget" type="number" name="millpowertarget" value="0" />
+        <label for="drivespeedtarget">Your Main Drive Speed target:</label>
+        <input id="drivespeedtarget" type="number" name="drivespeedtarget" value="0" />
+      </pre>
+      
+        <pre> 
+          <button class = "normalbutton" type="submit" value="Submit">Optimize</button>
+        </pre>
+    </form> 
+  </body>
+{% endblock %}

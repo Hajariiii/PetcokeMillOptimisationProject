@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+
+<html>
+  
+  <head>
+      <title>Home</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles/startpage.css">
+  </head>
+
+
+  <body>
+    <div class="containerhome">
+      <div class="cardhome">
+        <div class="cardhome-content">
+          <h1>Enhance Petcoke Mill Performance</h1>
+          <h4>Informing Decision-Making with XGBoost and PSO</h4>
+          <p>
+            Welcome to the home page of this project! We are passionate about revolutionizing industrial operations by integrating modern machine learning and optimization approaches. By properly forecasting and adjusting critical process factors, we hope to increase efficiency and drive performance. With this user-friendly interface, you can swiftly input the essential data and obtain accurate forecasts for mill power and main drive speed numbers.
+          </p>
+          <p>
+            Join us on this journey of innovation and discover how this initiative has the potential to improve industrial operations!
+          </p>
+          <form action="/" method="post">
+            <button type="submit" name="submit" value="Prediction"><i class="fas fa-play"></i> Start </button>
+          </form>
+        </div>
+      </div>
+      <div class="cardhome">
+        <div class="imagehome">
+          <img src="styles/process_img01.png" alt="Project Image" >
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+
+  </style>
+</html> 
+{% endblock %}
