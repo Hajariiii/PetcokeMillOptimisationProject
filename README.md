@@ -1,6 +1,6 @@
 # Outil d'Aide à la Décision pour l'Amélioration de la Performance du Broyeur de Coke de Pétrole
 
-Le projet s’agit de construire outil d'aide à la décision pour l'amélioration de la performance du broyeur de coke de pétrole, ce qui inclue modéliser le processus, créer un algorithme pour optimiser les paramètres du broyeur et programmer une interface ergonomique. 
+Le projet s’agit de construire un outil d'aide à la décision pour l'amélioration de la performance du broyeur de coke de pétrole, ce qui inclue modéliser le processus, créer un algorithme pour optimiser les paramètres du broyeur et programmer une interface ergonomique. 
 
 ## Hébergement
 
