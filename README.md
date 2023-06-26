@@ -39,7 +39,8 @@ Notre interface web est entièrement responsive, ce qui signifie qu'elle s'adapt
 
 
 
-## Groupe de travail
+## Auteurs
+
 M. Benchekkroun  Mohammed (Manager de Production à LafargeHolcim Meknès) mohammed.benchekroun@lafargeholcim.com
 
 Belrhiti Hajar (Ingénieure Industrielle en intelligence artificielle et data science) 
